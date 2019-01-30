@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2019 at 09:35 AM
+-- Generation Time: Jan 30, 2019 at 01:30 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -35,7 +35,7 @@ CREATE TABLE `customer` (
   `gender` varchar(10) NOT NULL,
   `birthdate` date NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -45,7 +45,10 @@ CREATE TABLE `customer` (
 INSERT INTO `customer` (`id`, `firstName`, `lastName`, `gender`, `birthdate`, `email`, `password`) VALUES
 (4, 'ksksk', 'jsjsj', 'Male', '0000-00-00', 'jsjsk@gmail.com', '$2y$10$EV0M9TwwG3ScI'),
 (5, 'ksksk', 'jsjsj', 'Male', '0000-00-00', 'jsjsk@gmail.com', '$2y$10$46iReK7dw/v1A'),
-(6, 'kqkq', 'kekke', 'Male', '2019-01-28', 'mama@gmail.com', '$2y$10$bXek3QEdtJplA');
+(6, 'kqkq', 'kekke', 'Male', '2019-01-28', 'mama@gmail.com', '$2y$10$bXek3QEdtJplA'),
+(7, 'hello', 'world', 'Male', '2019-01-01', 'hello@gmail.com', '$2y$10$Jf0N9hHCktkih'),
+(8, 'tg', 'yh', 'Male', '2019-01-09', 'ff@gmail.com', '$2y$10$ek/2JA6T7JD.j'),
+(9, 'qq', 'qq', 'Male', '2019-01-30', 'qq@gmail.com', '$2y$10$/yrtjHhYfo.DIxlvub4BoeCsuNLUC1i6bpXyghhoSo.H7lJdzEHHq');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +68,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

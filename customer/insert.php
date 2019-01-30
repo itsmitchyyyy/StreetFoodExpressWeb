@@ -13,8 +13,4 @@ $data = array($firstName, $lastName, $gender, $birthdate, $email, $password);
 $fields = array('firstName', 'lastName', 'gender', 'birthdate', 'email', 'password');
 
 $status = insert($table, $data, $fields);
-if($status){
-	echo json_encode(array('success' => 'true'));
-}else {
-	echo json_encode(array('success' => 'false'));
-}
+echo json_encode(array('info' => $status));
