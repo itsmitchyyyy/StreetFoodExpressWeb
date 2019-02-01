@@ -17,11 +17,11 @@ function login($table, $data, $fields) {
 		if(password_verify($data[1], $dbData['password'])){
 			return $dbData;
 		} else {
-			return array('status' => 'not_match');
+			return array('status' => 'Invalid Credentials');
 		}
 	}
 	else {
-		return array('status', 'failed');
+		return array('status' => 'Invalid Credentials');
 	}
 }
 
@@ -40,6 +40,11 @@ function insert($table, $data, $fields){
 		$sql = "INSERT INTO $table($fld) VALUES($values)";
 		$stmt = conn()->prepare($sql);
 		$stmt->execute($data);
-		return array('status' => 'success');
+		$rows = $stmt->fetch(PDO::FETCH_ASSOC);
+		if($stmt->rowCount() > 0) {
+			return $rows;
+		} else {
+			return array('status' => 'failed');
+		}
 	}
 }

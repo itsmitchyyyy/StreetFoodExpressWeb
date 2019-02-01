@@ -7,10 +7,11 @@ $gender = $_POST['gender'];
 $birthdate = $_POST['birthdate'];
 $email = $_POST['email'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+$userType = $_POST['userType'];
 
-$table = 'customer';
-$data = array($firstName, $lastName, $gender, $birthdate, $email, $password);
-$fields = array('firstName', 'lastName', 'gender', 'birthdate', 'email', 'password');
+$table = 'user';
+$data = array($firstName, $lastName, $gender, $birthdate, $email, $password, $userType);
+$fields = array('firstName', 'lastName', 'gender', 'birthdate', 'email', 'password', 'userType');
 
 $status = insert($table, $data, $fields);
-echo json_encode(array('info' => $status));
+echo json_encode($status);
