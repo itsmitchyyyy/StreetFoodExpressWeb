@@ -1,0 +1,6 @@
+{
+    "name": "madi/streetfood",
+    "require": {
+    	"braintree/braintree_php":"3.39.0"
+    }
+}
